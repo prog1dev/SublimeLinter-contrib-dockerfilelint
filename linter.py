@@ -16,17 +16,18 @@ from SublimeLinter.lint import Linter, util
 class Dockerfilelint(Linter):
     """Provides an interface to dockerfilelint."""
 
-    syntax = ''
-    cmd = 'dockerfilelint'
-    executable = None
+    syntax = 'dockerfile'
+    cmd = 'dockerfilelint --json'
+    executable = 'dockerfilelint'
     version_args = '--version'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 1.0'
+    version_requirement = '>= 1.4.0'
+    config_file = ('.dockerfilelintrc', '~')
     regex = r''
-    multiline = False
+    multiline = True
     line_col_base = (1, 1)
     tempfile_suffix = None
-    error_stream = util.STREAM_BOTH
+    error_stream = util.STREAM_STDOUT
     selectors = {}
     word_re = None
     defaults = {}
