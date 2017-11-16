@@ -30,7 +30,10 @@ As for now this plugin is not officially approved by [SublimeLinter](https://git
 
 **For MacOS users:**
 
-1. In you terminal run `cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ && git clone git@github.com:prog1dev/SublimeLinter-contrib-dockerfilelint.git`
+1. In you terminal run
+  ```
+    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ && git clone git@github.com:prog1dev/SublimeLinter-contrib-dockerfilelint.git
+  ```
 2. Restart your Sublime Text 3 editor
 3. Enjoy!
 
