@@ -24,7 +24,18 @@ class Dockerfilelint(Linter):
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
     version_requirement = '>= 1.4.0'
     config_file = ('.dockerfilelintrc', '~')
-    regex = r''
+
+    # The following regex parses text in format <file>:<line>:<error>:<message>\n
+    #
+    # Possible Bug & Deprecation marked as errors
+    #
+    # Optimization & Clarity marked as warnings
+
+    regex = (
+        r'^.+?:(?P<line>\d+):'
+        r'(?:(?P<error>Possible Bug|Deprecation|)|(?P<warning>Optimization|Clarity|)):'
+        r'(?P<message>.+)$\r?\n'
+    )
     multiline = True
     line_col_base = (1, 1)
     tempfile_suffix = None
