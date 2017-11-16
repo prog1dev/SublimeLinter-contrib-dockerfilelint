@@ -13,7 +13,7 @@ Before installing this plugin, you must ensure that `dockerfilelint` is installe
 
 2. Install `dockerfilelint` by typing the following in a terminal:
   ```
-    npm install -g dockerfilelint
+    npm install -g dockerfilelint@">=1.4.0"
   ```
 
 3. If you are using `nvm` and `zsh`, ensure that the line to load `nvm` is in `.zshenv` or `.zprofile` and not `.zshrc`.(reason: [here](http://www.sublimelinter.com/en/latest/installation.html) and [here](https://github.com/SublimeLinter/SublimeLinter3/issues/128))
