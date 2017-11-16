@@ -48,12 +48,15 @@ class Dockerfilelint(Linter):
     def format(self, output):
         """Formats json output to text <file>:<line>:<error>:<message>\n"""
 
-        json = json.loads(output)
-        filename = json['files'][0]['file']
+        json_output = json.loads(output)
         formatted_lines = []
 
-        for issue in json['files'][0]['issues']:
-            message = issue['description'].split('.')[0]
-            formatted_lines.append(''.join([filename, ':', issue['line'], ':', issue['category'], ':', message, "\n"]))
-        return ''.join(formatted_lines)
+        for issue in json_output['files'][0]['issues']:
+            file = json_output['files'][0]['file']
+            line = issue['line']
+            error = issue['category']
+            message = issue['description']
 
+            formatted_lines.append(''.join([file, ':', line, ':', error, ':', message, "\n"]))
+
+        return ''.join(formatted_lines)
