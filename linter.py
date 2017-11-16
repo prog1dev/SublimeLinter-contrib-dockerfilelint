@@ -42,7 +42,7 @@ class Dockerfilelint(Linter):
     defaults = {}
 
     def run(self, cmd, code):
-        output = super().run(self, cmd, code)
+        output = super().run(cmd, code)
         return self.format(output)
 
     def format(self, output):
