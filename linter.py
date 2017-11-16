@@ -37,15 +37,9 @@ class Dockerfilelint(Linter):
         r'(?P<message>.+)$\r?\n'
     )
     multiline = True
-    line_col_base = (1, 1)
-    tempfile_suffix = None
     error_stream = util.STREAM_STDOUT
     selectors = {}
-    word_re = None
     defaults = {}
-    inline_settings = None
-    inline_overrides = None
-    comment_re = None
 
     def run(self, cmd, code):
         output = super().run(self, cmd, code)
