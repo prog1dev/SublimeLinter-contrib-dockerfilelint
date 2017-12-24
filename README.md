@@ -26,16 +26,13 @@ In order for `dockerfilelint` to be executed by SublimeLinter, you must ensure t
 Once `dockerfilelint` is installed and configured, you can proceed to install the SublimeLinter-contrib-dockerfilelint plugin if it is not yet installed.
 
 ### Plugin installation
-As for now this plugin is not officially approved by [SublimeLinter](https://github.com/SublimeLinter) members. So the only way to use this plugin is to install from source.
+Please use [Package Control](https://sublime.wbond.net/installation) to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won’t cover that here.
 
-**For MacOS users:**
+To install via Package Control, do the following:
 
-1. In you terminal run
-  ```
-    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ && git clone git@github.com:prog1dev/SublimeLinter-contrib-dockerfilelint.git
-  ```
-2. Restart your Sublime Text 3 editor
-3. Enjoy!
+1. Within Sublime Text, bring up the [Command Palette](http://docs.sublimetext.info/en/sublime-text-3/extensibility/command_palette.html) and type `install`. Among the commands you should see `Package Control: Install Package`. If that command is not highlighted, use the keyboard or mouse to select it. There will be a pause of a few seconds while Package Control fetches the list of available plugins.
+
+1. When the plugin list appears, type `dockerfilelint`. Among the entries you should see `SublimeLinter-contrib-dockerfilelint`. If that entry is not highlighted, use the keyboard or mouse to select it.
 
 ## Settings
 For general information on how SublimeLinter works with settings, please see [Settings](http://sublimelinter.readthedocs.org/en/latest/settings.html). For information on generic linter settings, please see [Linter Settings](http://sublimelinter.readthedocs.org/en/latest/linter_settings.html).
