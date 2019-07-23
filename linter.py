@@ -17,12 +17,7 @@ from SublimeLinter.lint import Linter, util
 class Dockerfilelint(Linter):
     """Provides an interface to dockerfilelint."""
 
-    syntax = 'dockerfile'
     cmd = 'dockerfilelint --json'
-    executable = 'dockerfilelint'
-    version_args = '--version'
-    version_re = r'(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 1.4.0'
     config_file = ('.dockerfilelintrc', '~')
 
     # The following regex parses text in format <file>:<line>:<error>:<message>\n
@@ -38,8 +33,9 @@ class Dockerfilelint(Linter):
     )
     multiline = True
     error_stream = util.STREAM_STDOUT
-    selectors = {}
-    defaults = {}
+    defaults = {
+        'selector': 'source.dockerfile'
+    }
 
     def run(self, cmd, code):
         output = super().run(cmd, code)
