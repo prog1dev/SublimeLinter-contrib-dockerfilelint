@@ -16,21 +16,19 @@ from SublimeLinter.lint import Linter, util
 
 class Dockerfilelint(Linter):
     """Provides an interface to dockerfilelint."""
-
     cmd = 'dockerfilelint --json'
-    config_file = ('.dockerfilelintrc', '~')
 
     # The following regex parses text in format <file>:<line>:<error>:<message>\n
     #
     # Possible Bug & Deprecation marked as errors
     #
     # Optimization & Clarity marked as warnings
-
     regex = (
         r'^.+?:(?P<line>\d+):'
         r'(?:(?P<error>Possible Bug|Deprecation|)|(?P<warning>Optimization|Clarity|)):'
         r'(?P<message>.+)$\r?\n'
     )
+
     multiline = True
     error_stream = util.STREAM_STDOUT
     defaults = {
