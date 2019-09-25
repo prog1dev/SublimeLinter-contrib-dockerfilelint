@@ -20,6 +20,10 @@ Before installing this plugin, you must ensure that `dockerfilelint` is installe
 
 **Note:** This plugin requires `dockerfilelint` 1.4.0 or later.
 
+You must also install the Dockerfile syntax definitions available for Sublime Text under package control. Search for Dockerfile Syntax Highlighting.
+
+https://packagecontrol.io/packages/Dockerfile%20Syntax%20Highlighting
+
 ### Linter configuration
 In order for `dockerfilelint` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through [“Validating your PATH”](http://www.sublimelinter.com/en/latest/troubleshooting.html#validating-your-path) in the documentation.
 
