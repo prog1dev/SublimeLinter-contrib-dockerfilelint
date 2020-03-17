@@ -17,7 +17,6 @@ from SublimeLinter.lint import Linter, util
 class Dockerfilelint(Linter):
     """Provides an interface to dockerfilelint."""
 
-    syntax = 'dockerfile'
     cmd = 'dockerfilelint --json'
     executable = 'dockerfilelint'
     version_args = '--version'
@@ -38,8 +37,10 @@ class Dockerfilelint(Linter):
     )
     multiline = True
     error_stream = util.STREAM_STDOUT
-    selectors = {}
-    defaults = {}
+    # selectors = {}
+    defaults = {
+        "selector": "source.dockerfile"
+    }
 
     def run(self, cmd, code):
         output = super().run(cmd, code)
